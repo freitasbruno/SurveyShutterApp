@@ -13,12 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@drawable/ic_shutter_icon"
-        android:minWidth="150dp"
-        android:minHeight="150dp"
+        android:src="@drawable/shutter_icon_100"
         android:layout_above="@+id/btnLoginActivity"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="55dp" />
+        android:layout_marginBottom="50dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -42,18 +40,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_below="@+id/checkBox"
-        android:layout_centerHorizontal="true" />
+        android:text="SKIP"
+        android:id="@+id/btnSkipLogin"
+        android:layout_below="@+id/btnRegisterActivity"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="startProjectListActivity"/>
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Always skip this screen"
-        android:id="@+id/checkBox"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/btnRegisterActivity"
-        android:layout_marginTop="10dp" />
+        android:id="@+id/skipLoginCheckBox"
+        android:layout_below="@+id/btnSkipLogin"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
