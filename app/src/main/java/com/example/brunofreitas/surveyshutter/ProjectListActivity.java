@@ -1,28 +1,50 @@
 package com.example.brunofreitas.surveyshutter;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.widget.ListView;
 
-public class ProjectListActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class ProjectListActivity extends Activity{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         setContentView(R.layout.activity_project_list);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        // 1. pass context and data to the custom adapter
+        ProjectListArrayAdapter adapter = new ProjectListArrayAdapter(this, generateData());
+
+        // 2. Get ListView from activity_main.xml
+        ListView listView = (ListView) findViewById(R.id.listview);
+
+        // 3. setListAdapter
+        listView.setAdapter(adapter);
+
+        listView.getFirstVisiblePosition();
     }
+
+    private ArrayList<Project> generateData(){
+        ArrayList<Project> items = new ArrayList<>();
+        items.add(new Project(1, 0, "Item 1","First Item on the list"));
+        items.add(new Project(1, 0, "Item 1","First Item on the list"));
+        items.add(new Project(2, 1, "Item 2", "Second Item on the list"));
+        items.add(new Project(3, 1, "Item 3", "Third Item on the list"));
+        items.add(new Project(1, 0, "Item 4","First Item on the list"));
+        items.add(new Project(2, 1, "Item 5", "Second Item on the list"));
+        items.add(new Project(3, 1, "Item 6", "Third Item on the list"));
+        items.add(new Project(1, 0, "Item 7","First Item on the list"));
+        items.add(new Project(2, 1, "Item 8", "Second Item on the list"));
+        items.add(new Project(3, 1, "Item 9", "Third Item on the list"));
+        items.add(new Project(1, 0, "Item 10","First Item on the list"));
+        items.add(new Project(2, 1, "Item 11", "Second Item on the list"));
+        items.add(new Project(3, 1, "Item 12", "Third Item on the list"));
+        items.add(new Project(1, 0, "Item 13","First Item on the list"));
+        items.add(new Project(2, 1, "Item 14", "Second Item on the list"));
+        items.add(new Project(3, 1, "Item 15", "Third Item on the list"));
+
+        return items;
+    }
+
 }

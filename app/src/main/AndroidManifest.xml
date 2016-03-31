@@ -18,7 +18,7 @@
         <activity
             android:name=".ProjectListActivity"
             android:label="@string/title_activity_project_list"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>
