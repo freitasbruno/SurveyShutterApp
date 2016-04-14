@@ -27,6 +27,7 @@ public class ProjectListActivity extends Activity{
 
     private ArrayList<Project> generateData(){
         ArrayList<Project> items = new ArrayList<>();
+
         items.add(new Project(1, 0, "Item 1","First Item on the list"));
         items.add(new Project(1, 0, "Item 1","First Item on the list"));
         items.add(new Project(2, 1, "Item 2", "Second Item on the list"));
